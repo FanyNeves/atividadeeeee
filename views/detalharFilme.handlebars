@@ -1,0 +1,66 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<a href="/">
+  Inicial
+</a><br>
+<a href="/produtos">
+  Produtos
+</a>
+
+<h1>Detalhar Produto</h1>
+
+<hr>
+
+<ul>
+
+    <label>Nome:</label>
+    {{produtos.nome}}
+    <br>
+
+    <label>Ano:</label>
+    {{produtos.ano}}
+    <br>
+
+    <label>Categoria</label>
+    <a href='/categorias/{{produtos.categoria.id}}'>{{produtos.categoria.nome}}</a><br>
+    <br>
+
+    <label>Tamanhos</label>
+    <ul>
+      {{#each produtos.tamanhos}}
+        <li>
+          <a href='/tamanho/{{this.id}}'>{{this.nome}}</a><br>
+        </li>
+      {{/each}}
+    </ul>
+
+</ul>
+
+<h1>{{produtos.nome}} ({{produtos.ano}})</h1>
+
+<label>Ficha Técnica:</label>
+{{#if produtos.fichaTecnica}}
+  <ul>
+    <li>Duração: {{produtos.fichaTecnica.duracaoMinutos}} minutos</li>
+    <li>Orçamento: {{produtos.fichaTecnica.orcamento}}</li>
+    <li>Bilheteria: {{produtos.fichaTecnica.bilheteria}}</li>
+  </ul>
+{{else}}
+  <a href="/produtos/{{produtos.id}}/ficha-tecnica/cadastrar">Cadastrar ficha técnica</a>
+{{/if}}
+
+<h1> ()</h1>
+
+<label>Elenco:</label>
+<ul>
+  
+    <li><a href="/artistas/"></a></li>
+  
+</ul>
+
+<h1> ()</h1>
+
+<label>Diretor:</label>
+
+  <a href="/diretores/"></a>
+

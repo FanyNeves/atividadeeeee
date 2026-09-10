@@ -1,0 +1,37 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<h1>Lista de produtos
+
+</h1>
+
+<a href="/">
+  Inicial
+</a><br>
+
+<a href="/produtos/cadastrar">
+  
+</a>
+
+<hr>
+
+<ul>
+
+  {{#each produtos
+}}
+
+    <li>
+      <a href="/produtos
+    /{{this.id}}">{{this.nome}} - {{this.ano}}</a>
+
+      <a href="/produtos
+    /{{this.id}}/editar"><i class="fa-solid fa-pen-to-square"></i></a>
+      
+      <form action="/produtos
+    /{{this.id}}?_method=DELETE" method="POST" style="display: inline;">
+        <button type="submit"><i class="fa-solid fa-trash-can"></i></button>
+      </form>
+    </li>
+
+  {{/each}}
+
+</ul>

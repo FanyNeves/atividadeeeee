@@ -1,0 +1,43 @@
+<h1>Cadastrar Produto</h1>
+
+<form action="/produtos" method="POST">
+
+  <div>
+    <label>Nome:</label>
+    <input type="text" name="nome">
+  </div>
+
+  <br>
+
+  <div>
+    <label>Ano:</label>
+    <input type="number" name="ano">
+  </div>
+
+  <br>
+
+  <div>
+    <label>Categoria:</label>
+    <select name="categoriaId">
+      {{#each categorias}}
+        <option value="{{this.id}}">{{this.nome}}</option>
+      {{/each}}
+    </select>
+  </div>
+
+  <br>
+
+  <div>
+    <label>Tamanhos:</label>
+    <select name="tamanhos" multiple>
+      {{#each tamanhos}}
+        <option value="{{this.id}}">{{this.nome}}</option>
+      {{/each}}
+    </select>
+  </div>
+
+  <button type="submit">
+    Cadastrar
+  </button>
+
+</form>

@@ -1,0 +1,25 @@
+<h1>Cadastrar Tamanho</h1>
+
+<form action="/tamanho" method="POST">
+
+  <div>
+    <label>Nome:</label>
+    <input type="text" name="nome">
+  </div>
+
+  <br>
+
+  <div>
+    <label>Produtos:</label>
+    <select name="produtos" multiple>
+      {{#each produtos}}
+        <option value="{{this.id}}">{{this.nome}}</option>
+      {{/each}} 
+    </select>
+  </div>
+
+  <button type="submit">
+    Cadastrar
+  </button>
+
+</form>

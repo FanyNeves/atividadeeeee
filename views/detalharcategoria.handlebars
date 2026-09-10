@@ -1,0 +1,15 @@
+<a href="/">Inicial</a> <br>
+<a href="/categorias">Categorias</a>
+
+<h1>Detalhar Categoria</h1>
+
+<label>Nome:</label> {{categoria.nome}}<br>
+<label>Ano:</label> {{categoria.anoNascimento}}<br>
+<label>Nacionalidade:</label> {{categoria.nacionalidade}}<br>
+
+<label>Produtos:</label>
+<ul>
+  {{#each categoria.produtos}}
+    <li><a href="/produtos/{{this.id}}">{{this.nome}} ({{this.ano}})</a></li>
+  {{/each}}
+</ul>
